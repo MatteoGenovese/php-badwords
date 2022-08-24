@@ -13,8 +13,14 @@
 
     // http://localhost:8888/45_php-badwords/php-badwords/?word=Lorem sostituisce Lorem con i puntini
 
-    $stringaCensurata=str_replace($_GET['word'],'***',$stringa);
-    echo $stringaCensurata
+    if(!is_null($_GET['word']) )
+    {
+        $stringaCensurata=str_replace($_GET['word'],'***',$stringa);
+        echo $stringaCensurata;
+    }
+    else {
+        echo 'non è stata fatta alcuna domanda Get';
+    }
 
 ?>
     
